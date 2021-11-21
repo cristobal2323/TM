@@ -1,0 +1,20 @@
+/* Button main */
+.btn-main {
+  color: #ffffff;
+  background-color: $color-blue;
+  border-color: $color-blue-light;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.btn-main:hover,
+.btn-main:focus,
+.btn-main:active,
+.btn-main.active,
+.open .dropdown-toggle.btn-main {
+  color: #ffffff;
+  background-color: $color-blue-light;
+  border-color: $color-blue;
+}

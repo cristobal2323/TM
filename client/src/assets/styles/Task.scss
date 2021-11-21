@@ -1,0 +1,174 @@
+.module-view {
+  width: 100%;
+  display: flex;
+  background: $color-white;
+  flex-wrap: wrap;
+  .module-view--title {
+    width: 100%;
+    display: flex;
+    background: $color-white;
+    padding: 12px 20px;
+    align-items: center;
+    border-top: 2px solid $color-orange;
+    border-bottom: 1px solid $color-orange;
+    &.special {
+      border-top: 0px solid $color-gray;
+      border-bottom: 0px solid $color-gray;
+    }
+    h3 {
+      color: $color-orange;
+      margin: 0 20px 0 0;
+      font-size: 25px;
+    }
+    h4 {
+      color: $color-text-light;
+      margin-right: 20px;
+      margin: 0;
+      font-size: 25px;
+      strong {
+        color: $color-text;
+      }
+    }
+  }
+
+  .module-view--box {
+    width: 33%;
+    padding: 15px 20px;
+    @include respond-to(tabletPhone) {
+      width: 50%;
+    }
+    @include respond-to(mobile) {
+      width: 100%;
+    }
+    h5 {
+      color: $color-text-light;
+      font-size: 16px;
+    }
+    h6 {
+      color: $color-text;
+      font-size: 16px;
+      strong {
+        margin-left: 10px;
+
+        font-size: 12px;
+        color: $color-orange;
+        &:hover {
+          cursor: pointer;
+          color: $color-orange-light;
+        }
+      }
+    }
+  }
+  .module-view--box-img {
+    width: 16.6%;
+    padding: 20px;
+    @include respond-to(desktop) {
+      width: 20%;
+    }
+    @include respond-to(tabletPhone) {
+      width: 33.3%;
+    }
+    @include respond-to(mobile) {
+      width: 50%;
+    }
+    .module-view--img-size {
+      position: relative;
+      img {
+        object-fit: contain;
+        width: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      .module-view--button-view {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        background: $color-blue;
+        padding: 10px;
+        border-top-left-radius: 5px;
+        color: $color-white;
+        &:hover {
+          background: $color-blue-light;
+          cursor: pointer;
+        }
+      }
+      .module-view--button-delete {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        background: $color-blue;
+        padding: 10px;
+        border-top-right-radius: 5px;
+        color: $color-white;
+        &:hover {
+          background: $color-blue-light;
+          cursor: pointer;
+        }
+      }
+      .module-view--text-img {
+        background: $color-blue;
+        display: flex;
+        padding: 13px 5px;
+        height: 50px;
+        align-items: center;
+        h3 {
+          font-size: 12px;
+          margin: 0;
+          padding: 0;
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
+
+.sign {
+  width: 200px;
+}
+
+.mapa-check {
+  width: 100%;
+  background: $color-white;
+  display: flex;
+  padding: 10px;
+  .mapa-check--box {
+    width: 50%;
+    padding: 10px;
+    @include respond-to(mobile) {
+      width: 100%;
+    }
+    h6 {
+      color: $color-orange;
+      margin: 0 20px 0 0;
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+  }
+  .leaflet-container {
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.modal-image {
+  img {
+    width: 100%;
+  }
+}
+
+.sign--button {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  padding: 0 20px;
+}
+
+.module--button--right {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-right: 30px;
+}

@@ -1,0 +1,164 @@
+.module--dashboardHeader {
+  width: 100%;
+  height: 3.9687em;
+  background: $color-white;
+  position: relative;
+  z-index: 4;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .notification {
+    position: relative;
+    margin-right: 20px;
+    .notification--point {
+      position: absolute;
+      left: 10px;
+      width: 7px;
+      height: 7px;
+      background-color: $color-orange;
+      border-radius: 50%;
+    }
+    i {
+      color: $color-blue-light;
+      font-size: 20px;
+    }
+  }
+  .module--dashboardHeadeBtnNav {
+    display: flex;
+    width: 100%;
+    a {
+      color: $color-green;
+      @include respond-to(tabletPhone) {
+        display: flex;
+      }
+      margin: 0 1em;
+      display: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      justify-content: center;
+      cursor: pointer;
+      align-items: center;
+      &:hover {
+        background: $base-color-text-hover;
+      }
+    }
+  }
+  .module--dashboardHeader__client {
+    display: flex;
+    align-items: center;
+    img {
+      max-width: 150px;
+      padding: 0 10px 0 0;
+      @include respond-to(mobile) {
+        display: none;
+      }
+    }
+    h3 {
+      color: #ede8ea;
+      font-size: 12px;
+      margin: 0 0 0 0;
+      padding: 0 10px;
+      border-left: solid 1px #ede8ea;
+      @include respond-to(desktop) {
+        width: 350px;
+      }
+    }
+  }
+  .module--dashboardHeaderName {
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    width: 500px;
+    justify-content: flex-end;
+    @include respond-to(desktop) {
+      width: 300px;
+    }
+    @include respond-to(mobile) {
+      width: 300px;
+    }
+    h2 {
+      font-size: 0.8em;
+      padding: 0;
+      margin: 0;
+      color: $color-blue;
+      font-family: "Roboto-Regular";
+      strong {
+        margin-left: 15px;
+      }
+    }
+    .module--dashboardHeaderName__avatar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      min-width: 40px;
+      height: 40px;
+      background: $color-blue;
+      color: $color-white;
+      margin-right: 10px;
+      border-radius: 50%;
+      text-transform: uppercase;
+    }
+    &:after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f107";
+      color: $color-blue-light;
+      margin-left: 20px;
+      transition: transform 0.5s ease-in-out;
+    }
+    .module--dashboardHeaderName__menu {
+      position: absolute;
+      background: #ffffff;
+      top: 4.563em;
+      right: 1em;
+      padding: 0.5em 1em;
+      width: 9.375em;
+      border-radius: 5px;
+      display: none;
+      &.active {
+        display: block;
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        li {
+          color: $base-color-hover-light;
+          &.bottom {
+            border-top: solid 1px #ccc;
+            margin-top: 0.5em;
+            padding-top: 0.5em;
+          }
+          a,
+          span {
+            color: $base-color-hover-light;
+            font-size: 0.813em;
+            padding: 0.5em;
+            display: block;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            &:hover {
+              background: $base-color-text-hover;
+            }
+            i {
+              display: inline-block;
+              width: 15px;
+              text-align: center;
+            }
+            strong {
+              font-weight: normal;
+              color: $text-dark;
+              margin-left: 0.5em;
+            }
+          }
+        }
+      }
+    }
+  }
+}

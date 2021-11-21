@@ -1,0 +1,88 @@
+.module--form {
+  width: calc(100% - 2em);
+  margin: 1em 1em 0 1em;
+  padding: 1em;
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px rgb(218, 215, 215) solid;
+  .message_success {
+    color: $color-green;
+    margin-right: 10px;
+    font-size: 13px;
+  }
+  .message_error {
+    color: $color-red;
+    margin-right: 10px;
+    font-size: 13px;
+  }
+  .name-image {
+    color: $color-blue;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .module--form__box {
+    width: 50%;
+    @include respond-to(tabletPhone) {
+      width: 100%;
+    }
+    padding: 1em 1em 0 1em;
+    &.full {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+    &.title {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 1em 0 1em;
+      h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 1.2em;
+        padding-bottom: 1rem;
+        width: 100%;
+        border-bottom: 1px rgb(218, 215, 215) solid;
+      }
+    }
+  }
+  &.planner {
+    width: 100%;
+    margin: 0 0 0 0;
+    + .planner {
+      width: 100%;
+      margin: 1em 0 0 0;
+    }
+    .module--form__box {
+      width: 100%;
+    }
+  }
+}
+
+.form-group {
+  label {
+    strong {
+      margin-left: 10px;
+      font-size: 12px;
+      color: $color-orange;
+      &:hover {
+        color: $color-orange-light;
+        cursor: pointer;
+      }
+    }
+  }
+  .react-datepicker-wrapper {
+    width: 100%;
+    .react-datepicker__input-container {
+      width: 100%;
+    }
+  }
+}
+
+.form-input-date {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: solid 1px #ccc;
+}

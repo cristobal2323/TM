@@ -1,0 +1,55 @@
+* {
+  font-family: "Roboto-Regular";
+}
+
+$base-color: #1b2239;
+$base-color-hover: #737ba7;
+$base-color-hover-light: #9298be;
+$base-color-text-hover: #dddfeb;
+$paragraph-color: #727474;
+$text-gray: #858796;
+$text-dark: #3a3b45;
+
+body {
+  background-color: $color-white;
+}
+
+.flex {
+  display: flex;
+}
+
+.relative {
+  position: relative;
+}
+.right {
+  margin-right: 20px;
+}
+
+.left {
+  margin-left: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+.top {
+  margin-top: 20px;
+}
+
+.text-error {
+  color: $color-red;
+  font-size: 12px;
+}
+
+.text-success {
+  color: $color-green;
+  font-size: 12px;
+}
+
+.dateInput {
+  width: 100%;
+  padding: 9px 8px;
+  border-radius: 5px;
+  border: 1px solid $color-gray;
+}

@@ -1,0 +1,66 @@
+.module--dashboard {
+  display: flex;
+  .module--dashboardNav {
+    width: 300px;
+    min-height: 100vh;
+    background: $color-blue;
+    .logoMobile {
+      display: none;
+    }
+    @include respond-to(tabletPhone) {
+      width: 100px;
+      display: none;
+      .module--dashboardNav__perfil {
+        display: none;
+      }
+      &.extend {
+        display: block;
+        .logoDesktop {
+          display: none;
+        }
+        .module--dashboardNav__perfil {
+          display: none;
+        }
+        .logoMobile {
+          display: block;
+        }
+      }
+    }
+    &.mobile {
+      width: 100px;
+      .logoDesktop {
+        display: none;
+      }
+      .module--dashboardNav__perfil {
+        display: none;
+      }
+      .logoMobile {
+        display: block;
+      }
+    }
+  }
+  .module--dashboardContainer {
+    background: $color-white-dark;
+    width: calc(100% - 300px);
+    &.mobile {
+      width: calc(100% - 100px);
+    }
+    @include respond-to(tabletPhone) {
+      width: calc(100%);
+      &.extend {
+        width: calc(100% - 100px);
+      }
+      &.mobile {
+        width: 100%;
+        &.extend {
+          width: calc(100% - 100px);
+        }
+      }
+    }
+  }
+}
+
+.breadcrumb {
+  background: transparent;
+  margin-bottom: 0;
+}

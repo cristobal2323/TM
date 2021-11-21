@@ -1,0 +1,304 @@
+.module--dashboardNav {
+  position: relative;
+  z-index: 4;
+  .module--dashboardNav__logo {
+    width: 100%;
+    text-align: center;
+    padding: 0.5em 0 3px 0;
+    background-color: $color-blue;
+    .logoDesktop {
+      width: 186px;
+      margin: auto;
+    }
+    .logoMobile {
+      width: 80px;
+      margin: auto;
+    }
+  }
+  .module--dashboardNav__perfil {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    padding: 2rem 0 1rem 0;
+    h3 {
+      color: #ede8ea;
+      font-size: 1rem;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    p {
+      display: block;
+      color: #ede8ea;
+      text-align: center;
+      font-size: 12px;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      display: block;
+      color: $color-white-dark;
+      text-align: center;
+      font-size: 12px;
+      width: 100%;
+    }
+  }
+  .module--dashboardNav__menu {
+    color: $base-color-hover;
+    padding: 20px 0 0 0;
+    border-bottom: solid 0.5px $color-white;
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      li {
+        color: #ede8ea;
+        cursor: pointer;
+        > button,
+        a {
+          background: transparent;
+          border: 0;
+          outline: 0;
+          display: block;
+          width: 100%;
+          text-align: left;
+          padding: 20px 10px 20px 30px;
+          color: #ede8ea;
+          text-decoration: none;
+          border-top: 0.5px solid $color-white;
+          border-left: 0.5px solid $color-white;
+          @include respond-to(tabletPhone) {
+            padding: 10px;
+          }
+          &.mobile {
+            padding: 10px;
+          }
+          &:hover {
+            color: $color-gray;
+          }
+          &.active {
+            color: $color-gray;
+            i {
+              color: $color-gray;
+            }
+          }
+          &.arrow {
+            position: relative;
+            &:before {
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+              content: "\f105";
+              position: absolute;
+              right: 20px;
+              top: 20px;
+              z-index: 2;
+              color: #ede8ea;
+              transition: transform 0.5s ease-in-out;
+            }
+            &.active {
+              &:before {
+                transform: rotate(90deg);
+              }
+            }
+          }
+          &.space {
+            padding: 2em 0 1.2em 0;
+          }
+          &.mobile {
+            text-align: center;
+            font-size: 0.6875em;
+            strong {
+              display: block;
+              width: 100%;
+            }
+            i {
+              margin: 0;
+            }
+            &.arrow {
+              position: relative;
+              &:before {
+                content: none;
+              }
+            }
+          }
+          &[data-submenu="ok"] {
+            text-align: left;
+            font-size: 14px !important;
+            i {
+              font-size: 14px;
+              color: $color-white;
+            }
+            &:hover,
+            &.active {
+              color: $color-gray !important;
+              i {
+                color: $color-gray !important;
+              }
+            }
+          }
+          @include respond-to(tabletPhone) {
+            text-align: center;
+            font-size: 0.6875em;
+            strong {
+              display: block;
+              width: 100%;
+            }
+            i {
+              margin: 0;
+            }
+            &.arrow {
+              position: relative;
+              &:before {
+                content: none;
+              }
+            }
+          }
+        }
+        i {
+          color: #ede8ea;
+          margin-right: 0.5em;
+          width: 20px;
+        }
+        strong {
+          font-weight: normal;
+        }
+
+        &.no-border {
+          border: 0;
+        }
+        &:hover,
+        &.active {
+          color: $color-gray;
+          i {
+            color: $color-gray;
+          }
+          &.arrow {
+            &:before {
+              color: $color-gray;
+            }
+          }
+        }
+      }
+    }
+  }
+  .module--dashboardNav__arrow {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    @include respond-to(tabletPhone) {
+      display: none;
+    }
+    &.mobile {
+      div {
+        i {
+          transform: rotate(180deg);
+          margin-left: 2px;
+        }
+      }
+    }
+    div {
+      width: 35px;
+      height: 35px;
+      color: $base-color-text-hover;
+      border-radius: 50%;
+      background: $color-blue-light;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        background: $color-blue;
+      }
+      i {
+        display: block;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.module--dashboardNav__subMenu {
+  transition: all 0.5s ease-out;
+  height: auto;
+  max-height: 0;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  @include respond-to(tabletPhone) {
+    position: absolute;
+    width: 11.25em;
+    left: 100px;
+    background-color: $color-blue;
+    top: 0;
+    max-height: 0;
+    display: none;
+    a {
+      text-align: center !important;
+      padding: 20px 10px 20px 10px !important;
+    }
+    .module--dashboardNav__subMenuBox {
+      border: solid 1px;
+    }
+    &.active {
+      max-height: 700px;
+      display: block;
+    }
+  }
+  &.mobile {
+    position: absolute;
+    width: 11.25em;
+    background-color: $color-blue;
+    left: 100px;
+    top: 0;
+    max-height: 0;
+    display: none;
+    a {
+      text-align: center !important;
+      padding: 20px 10px 20px 10px !important;
+    }
+    .module--dashboardNav__subMenuBox {
+      border: solid 1px;
+    }
+    &.active {
+      max-height: 700px;
+      display: block;
+    }
+  }
+  .module--dashboardNav__subMenuBox {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    padding: 0 0;
+    width: 100%;
+    color: $color-gray;
+  }
+  &.active {
+    max-height: 700px;
+  }
+  h3,
+  a {
+    width: 100%;
+    font-size: 0.875em;
+    &.bottom {
+      margin-bottom: 1em;
+    }
+  }
+  h3 {
+    color: #b7b9cc;
+    font-weight: bold;
+    margin: 0;
+    padding: 1em 1em 0.5em 1em;
+  }
+  a,
+  span {
+    padding: 20px 10px 20px 57px !important;
+    color: $color-white !important;
+    &:hover,
+    &.active {
+      background: $base-color-text-hover;
+      color: $color-gray;
+      cursor: pointer;
+    }
+  }
+}

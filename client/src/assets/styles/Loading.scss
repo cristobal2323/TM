@@ -1,0 +1,22 @@
+.module--loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 60px);
+  i {
+    font-size: 40px;
+    color: $color-blue;
+  }
+}
+
+.module-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 60px);
+  h1 {
+    color: $color-blue;
+  }
+}
