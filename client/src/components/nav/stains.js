@@ -11,7 +11,7 @@ const Stains = (props) => (
       onClick={props.handleMenu}
       onKeyDown={props.handleMenu}
     >
-      <i className="fas fa-th"></i>
+      <i className="fas fa-splotch"></i>
       <strong>Stains</strong>
     </Link>
   </li>

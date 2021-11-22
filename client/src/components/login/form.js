@@ -16,8 +16,8 @@ import Logo from "../../assets/images/logo-tmc.png";
 const FormLogin = (props) => {
   /*  Use  states  */
   const [form, setForm] = useState({
-    user: "cri.maturana@gmail.com",
-    pass: "Gato1234",
+    user: "",
+    pass: "",
   });
 
   /*  User Select from redux  */
@@ -42,9 +42,11 @@ const FormLogin = (props) => {
   auth = auth === "true";
 
   return auth ? (
-    <Redirect to={ruta} />
+    <div data-testid="form">
+      <Redirect to={ruta} />
+    </div>
   ) : (
-    <div className="module--loginForm">
+    <div data-testid="form" className="module--loginForm">
       <h1>
         <img src={Logo} alt="img" />
       </h1>

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { FormattedMessage } from "react-intl";
 
 const Config = (props) => {
   const node = useRef();
@@ -35,33 +34,14 @@ const Config = (props) => {
           <li>
             <span onClick={() => props.setModalUser(true)}>
               <i className="fas fa-user" />
-              <strong>
-                <FormattedMessage id="Profile" />
-              </strong>
+              <strong>Profile</strong>
             </span>
           </li>
-          <li>
-            <span onClick={() => props.setModal(true)}>
-              <i className="fas fa-cogs" />
-              <strong>
-                <FormattedMessage id="Password" />
-              </strong>
-            </span>
-          </li>
-          <li>
-            <span onClick={() => props.setModalLanguage(true)}>
-              <i className="fas fa-globe-americas"></i>
-              <strong>
-                <FormattedMessage id="Languages" />
-              </strong>
-            </span>
-          </li>
+
           <li className="bottom">
             <a href="#closed" onClick={props.logOut} onKeyPress={props.logOut}>
               <i className="fas fa-sign-out-alt" />
-              <strong>
-                <FormattedMessage id="Logout" />
-              </strong>
+              <strong>Log out</strong>
             </a>
           </li>
         </ul>

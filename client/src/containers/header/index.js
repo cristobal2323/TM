@@ -30,8 +30,6 @@ const Nav = (props) => {
         </a>
       </div>
       <Config
-        setModalLanguage={props.setModalLanguage}
-        setModal={props.setModal}
         setModalUser={props.setModalUser}
         logOut={props.logOut}
         nameShort={nameShort}

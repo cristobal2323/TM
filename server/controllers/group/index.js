@@ -26,7 +26,12 @@ function getGroup(req, res) {
 function getGroups(req, res) {
   const obj = JSON.parse(req.params.obj);
 
-  Group.find({ laboratory: "6199270ea649a0698774c967" }, (err, groups) => {
+  let query = { laboratory: obj.laboratoryId };
+  if (obj.name !== "") {
+    query.name = { $regex: `.*${obj.name}.*`, $options: "i" };
+  }
+
+  Group.find(query, (err, groups) => {
     if (err)
       return res
         .status(500)
@@ -39,7 +44,7 @@ function getGroups(req, res) {
       path: "laboratory",
       select: "name",
     })
-    .populate({ path: "user", select: "email" })
+    .populate({ path: "user", select: "displayName" })
     .populate("stains");
 }
 
@@ -52,8 +57,10 @@ async function saveGroup(req, res) {
   group.user = new ObjectId(req.body.user);
   group.stains = [];
 
+  console.log(req.body);
+
   req.body.stains.forEach((element) => {
-    group.stains.push(new ObjectId(element));
+    group.stains.push(new ObjectId(element._id));
   });
 
   group.save().then(
@@ -69,15 +76,18 @@ async function saveGroup(req, res) {
 }
 
 function updateGroup(req, res) {
+  console.log("Aqui");
   let groupId = req.params.groupId;
   let update = req.body;
 
+  console.log(groupId, update);
   let arr = [];
-  req.body.stains.forEach((element) => {
-    arr.push(new ObjectId(element));
-  });
-
-  req.body.stains = arr;
+  if (update.stains) {
+    req.body.stains.forEach((element) => {
+      arr.push(new ObjectId(element._id));
+    });
+    update.stains = arr;
+  }
 
   Group.findByIdAndUpdate(new ObjectId(groupId), update, (err, groupUpdate) => {
     if (err)

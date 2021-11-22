@@ -6,7 +6,9 @@ import { Route } from "react-router-dom";
 
 import Home from "../home";
 import AddStain from "../add_stain";
-import InstalationPending from "../instalation_pending";
+import AddGroup from "../add_group";
+import GroupComponent from "../group";
+import UpdateGroup from "../update_group";
 
 /* components */
 import Nav from "../nav";
@@ -78,8 +80,23 @@ const Dashboard = ({ history, match }) => {
             <Route exact path={`${match.path}/home`} component={Home} />
             <Route
               exact
+              path={`${match.path}/group`}
+              component={GroupComponent}
+            />
+            <Route
+              exact
               path={`${match.path}/add_stain`}
               component={AddStain}
+            />
+            <Route
+              exact
+              path={`${match.path}/add_group`}
+              component={AddGroup}
+            />
+            <Route
+              exact
+              path={`${match.path}/update_group/:id`}
+              component={UpdateGroup}
             />
           </React.Fragment>
         </section>
